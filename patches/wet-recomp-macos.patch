@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 25c11fc..6d820d3 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -27,3 +27,10 @@ endif()
+ rexglue_setup_target(wet GPU_PLUGINS xenos)
+ target_include_directories(wet PRIVATE
+     "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/rexglue-sdk/thirdparty/imgui")
++
++if(TARGET wet_recomp)
++    set_source_files_properties(
++        "${CMAKE_CURRENT_SOURCE_DIR}/generated/default/wet_register.cpp"
++        PROPERTIES COMPILE_OPTIONS "-O1"
++    )
++endif()

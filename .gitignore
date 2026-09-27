@@ -1,0 +1,45 @@
+# This repo holds scripts, patches and config only. Never commit game content
+# or build output.
+
+# Game data / disc images
+game/
+*.xex
+*.xex.*
+*.iso
+*.ISO
+*.xiso
+*.dmg
+*.img
+image.bin
+*.bin
+dlc/
+$SystemUpdate/
+
+# App bundles and build output
+*.app/
+out/
+build/
+generated/
+thirdparty/
+wet
+wet.*.bak
+*.dylib
+*.so
+*.a
+*.o
+*.exe
+*.dll
+MoltenVK_icd.json
+
+# Logs, saves, caches
+logs/
+*.log
+cache/
+shader_cache/
+*.sav
+
+# Backups / local junk
+*.bak
+*.pre-*
+.DS_Store
+._*

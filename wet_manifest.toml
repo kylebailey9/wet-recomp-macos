@@ -1,0 +1,329 @@
+[project]
+name = "wet"
+sdk_version = "0.2.0"
+game_root = "game"
+
+[entrypoint]
+file_path = "game/default.xex"
+out_directory_path = "generated/default"
+includes = []
+
+[entrypoint.functions.0x82D0C758]
+
+[entrypoint.functions.0x82AE14C8]
+size = 192
+
+[entrypoint.functions.0x82AEFF8C]
+size = 156
+
+[entrypoint.functions.0x82AFC28C]
+size = 156
+
+[entrypoint.functions.0x82AFCE0C]
+size = 156
+
+[entrypoint.functions.0x82B01290]
+size = 156
+
+[entrypoint.functions.0x82F898D0]
+
+[entrypoint.functions.0x82D43F78]
+
+[entrypoint.functions.0x82FED688]
+
+[entrypoint.functions.0x82BA1948]
+
+[entrypoint.functions.0x82BA13F8]
+
+[entrypoint.functions.0x82F88858]
+
+[entrypoint.functions.0x82F9EB00]
+
+[entrypoint.functions.0x8301A948]
+
+[entrypoint.functions.0x832654F8]
+
+[entrypoint.functions.0x82CF88C0]
+
+[entrypoint.functions.0x82F7D768]
+
+[entrypoint.functions.0x82F99180]
+
+[entrypoint.functions.0x82FA0A48]
+
+[entrypoint.functions.0x82FE3B38]
+
+[entrypoint.functions.0x82FEB498]
+
+[entrypoint.functions.0x82FEE2D0]
+
+[entrypoint.functions.0x82FF0FA8]
+
+[entrypoint.functions.0x82FF8888]
+
+[entrypoint.functions.0x82FF8890]
+
+[entrypoint.functions.0x82FF8898]
+
+[entrypoint.functions.0x82FF88A0]
+
+[entrypoint.functions.0x82FF88B0]
+
+[entrypoint.functions.0x82FFD4A8]
+
+[entrypoint.functions.0x82FFD4B0]
+
+[entrypoint.functions.0x82FFD4B8]
+
+[entrypoint.functions.0x82FFD4C0]
+
+[entrypoint.functions.0x82FFD4C8]
+
+[entrypoint.functions.0x82FFD4D8]
+
+[entrypoint.functions.0x82FFD4E0]
+
+[entrypoint.functions.0x82FFD4E8]
+
+[entrypoint.functions.0x82FFD750]
+
+[entrypoint.functions.0x82FFD760]
+
+[entrypoint.functions.0x82FFD768]
+
+[entrypoint.functions.0x82FFD770]
+
+[entrypoint.functions.0x83009A98]
+
+[entrypoint.functions.0x8300A900]
+
+[entrypoint.functions.0x83014900]
+
+[entrypoint.functions.0x8301B1C0]
+
+[entrypoint.functions.0x8301DE80]
+
+[entrypoint.functions.0x83046740]
+
+[entrypoint.functions.0x83047EE4]
+
+[entrypoint.functions.0x8304805C]
+
+[entrypoint.functions.0x830A4D9C]
+
+[entrypoint.functions.0x830D0800]
+
+[entrypoint.functions.0x830D09D0]
+
+[entrypoint.functions.0x830D09F8]
+
+[entrypoint.functions.0x830D0A20]
+
+[entrypoint.functions.0x830D0A48]
+
+[entrypoint.functions.0x830D0E78]
+
+[entrypoint.functions.0x83175C80]
+
+[entrypoint.functions.0x8319F2B0]
+
+[entrypoint.functions.0x831A13C0]
+
+[entrypoint.functions.0x831BDD7C]
+
+[entrypoint.functions.0x831C0A34]
+
+[entrypoint.functions.0x831C9264]
+
+[entrypoint.functions.0x831C9F48]
+
+[entrypoint.functions.0x831D0E08]
+
+[entrypoint.functions.0x831D0E24]
+
+[entrypoint.functions.0x831D0F80]
+
+[entrypoint.functions.0x831D12EC]
+
+[entrypoint.functions.0x831D142C]
+
+[entrypoint.functions.0x831D1AEC]
+
+[entrypoint.functions.0x831DA424]
+
+[entrypoint.functions.0x83215E98]
+
+[entrypoint.functions.0x8321AA60]
+
+[entrypoint.functions.0x8321AA9C]
+
+[entrypoint.functions.0x8321B4E0]
+
+[entrypoint.functions.0x8321B640]
+
+[entrypoint.functions.0x83236524]
+
+[entrypoint.functions.0x83236534]
+
+[entrypoint.functions.0x832E48B8]
+
+[entrypoint.functions.0x83318460]
+
+[entrypoint.functions.0x8332DE90]
+
+[entrypoint.functions.0x82CE55F8]
+
+[entrypoint.functions.0x82B1BEF8]
+
+# 2026-09-27: 16-byte vtable-forwarding thunks (lwz r12,0(r3); lwz r11,N(r12); mtctr; bctr)
+# referenced via lis/addi function pointers but missed by analysis. 0x82983FA8 crashed on level load.
+
+[entrypoint.functions.0x828B7EF8]
+size = 16
+
+[entrypoint.functions.0x82983F68]
+size = 16
+
+[entrypoint.functions.0x82983F78]
+size = 16
+
+[entrypoint.functions.0x82983F88]
+size = 16
+
+[entrypoint.functions.0x82983F98]
+size = 16
+
+[entrypoint.functions.0x82983FA8]
+size = 16
+
+[entrypoint.functions.0x82983FB8]
+size = 16
+
+[entrypoint.functions.0x82983FC8]
+size = 16
+
+[entrypoint.functions.0x82983FD8]
+size = 16
+
+[entrypoint.functions.0x82983FE8]
+size = 16
+
+[entrypoint.functions.0x82984010]
+size = 16
+
+[entrypoint.functions.0x82984020]
+size = 16
+
+[entrypoint.functions.0x82984030]
+size = 16
+
+[entrypoint.functions.0x82984040]
+size = 16
+
+[entrypoint.functions.0x82B015D0]
+size = 16
+
+[entrypoint.functions.0x82B015E0]
+size = 16
+
+[entrypoint.functions.0x82B3E6D8]
+size = 16
+
+[entrypoint.functions.0x82B3E6E8]
+size = 16
+
+[entrypoint.functions.0x82B3E6F8]
+size = 16
+
+[entrypoint.functions.0x82B3E708]
+size = 16
+
+[entrypoint.functions.0x82B3E718]
+size = 16
+
+[entrypoint.functions.0x82B3E728]
+size = 16
+
+[entrypoint.functions.0x82B7BDD0]
+size = 16
+
+[entrypoint.functions.0x830D0E98]
+size = 16
+
+[entrypoint.functions.0x830D0EA8]
+size = 16
+
+[entrypoint.functions.0x830D0EB8]
+size = 16
+
+[entrypoint.functions.0x830D0EC8]
+size = 16
+
+[entrypoint.functions.0x830D0ED8]
+size = 16
+
+[entrypoint.functions.0x830D0EE8]
+size = 16
+
+[entrypoint.functions.0x830D0EF8]
+size = 16
+
+[entrypoint.functions.0x830D0F08]
+size = 16
+
+[entrypoint.functions.0x830D0F18]
+size = 16
+
+[entrypoint.functions.0x830D0F28]
+size = 16
+
+# rebuild14 (2026-09-27): FATAL unregistered 0x82B79D30 (wet_026.log, level load via WET.app).
+# Function-pointer targets (lis/addi stored or passed as arg, or .data table) placed right after a bctr/b and
+# merged into the preceding function by analysis: boost::function managers (cmpwi r5,3), vtable forwarders, etc.
+[entrypoint.functions.0x82510600]
+
+[entrypoint.functions.0x828D44E0]
+
+[entrypoint.functions.0x828D6C38]
+
+[entrypoint.functions.0x82908F98]
+
+[entrypoint.functions.0x82911050]
+
+[entrypoint.functions.0x82A234A0]
+
+[entrypoint.functions.0x82A48770]
+
+[entrypoint.functions.0x82A48780]
+
+[entrypoint.functions.0x82A487C0]
+
+[entrypoint.functions.0x82A487F0]
+
+[entrypoint.functions.0x82A50688]
+
+[entrypoint.functions.0x82A506A0]
+
+[entrypoint.functions.0x82A785B0]
+
+[entrypoint.functions.0x82AFC160]
+
+[entrypoint.functions.0x82B79D30]
+
+[entrypoint.functions.0x82B7BFB8]
+
+[entrypoint.functions.0x82CF8920]
+
+[entrypoint.functions.0x82CF89A0]
+
+[entrypoint.functions.0x82EDC938]
+
+[entrypoint.functions.0x82EDC9B8]
+
+[entrypoint.functions.0x82EDC9D0]
+
+[entrypoint.functions.0x82EDC9E8]
+
+[entrypoint.functions.0x8322FA40]
+
+[entrypoint.functions.0x83356DB8]

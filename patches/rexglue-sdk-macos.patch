@@ -1,0 +1,32 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 9b3cdf5..9405100 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -54,6 +54,7 @@ endif()
+ 
+ # Root of the SDK source tree
+ set(REXGLUE_ROOT "${CMAKE_CURRENT_SOURCE_DIR}")
++set(REXGLUE_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" PARENT_SCOPE)
+ 
+ # SDK install support
+ include(GNUInstallDirs)
+diff --git a/cmake/rexglue_helpers.cmake b/cmake/rexglue_helpers.cmake
+index 41e6dce..beb4b2b 100644
+--- a/cmake/rexglue_helpers.cmake
++++ b/cmake/rexglue_helpers.cmake
+@@ -6,13 +6,13 @@
+ #   rexglue_configure_target(<target>)             - host application
+ #   rexglue_configure_module_target(<target> ...)  - guest DLL module
+ #==========================================================
+-include_guard(GLOBAL)
++set(_REXGLUE_HELPERS_DIR "${CMAKE_CURRENT_LIST_DIR}")
+ 
+ function(_rexglue_stage_macos_vulkan_runtime target_name)
+     if(TARGET Vulkan::Loader AND TARGET MoltenVK::MoltenVK)
+         set(_rexglue_vulkan_loader Vulkan::Loader)
+         set(_rexglue_moltenvk MoltenVK::MoltenVK)
+-        set(_rexglue_moltenvk_icd "${REXGLUE_ROOT}/cmake/MoltenVK_icd.json")
++        set(_rexglue_moltenvk_icd "${_REXGLUE_HELPERS_DIR}/MoltenVK_icd.json")
+     elseif(TARGET rex::vulkan-loader AND TARGET rex::moltenvk)
+         set(_rexglue_vulkan_loader rex::vulkan-loader)
+         set(_rexglue_moltenvk rex::moltenvk)
