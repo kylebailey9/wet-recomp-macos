@@ -22,10 +22,18 @@ SDK_DIR="$ROOT/thirdparty/rexglue-sdk"
 TAG="${REXGLUE_TAG:-v0.10.0}"
 XEX="$ROOT/game/default.xex"
 ARCH="$(uname -m)"
-if [[ "$ARCH" == "arm64" ]]; then
-  PRESET="${WET_PRESET:-mac-arm64-release}"
+# WET_PRESET can be set explicitly (e.g. by CI). Otherwise pick by architecture.
+# Kept deliberately simple: direct assignment, no nested expansions.
+if [[ -n "${WET_PRESET:-}" ]]; then
+  PRESET="$WET_PRESET"
+elif [[ "$ARCH" == "arm64" ]]; then
+  PRESET="mac-arm64-release"
 else
-  PRESET="${WET_PRESET:-mac-amd64-release}"
+  PRESET="mac-amd64-release"
+fi
+if [[ -z "${PRESET:-}" ]]; then
+  echo "Failed to determine CMake preset (ARCH=$ARCH)" >&2
+  exit 1
 fi
 
 [[ "$(uname -s)" == "Darwin" ]] || { echo "Run on macOS."; exit 1; }
