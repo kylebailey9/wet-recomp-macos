@@ -3,6 +3,7 @@
 
 # Game data / disc images
 game/
+!game/default.xex.enc
 *.xex
 *.xex.*
 *.iso
