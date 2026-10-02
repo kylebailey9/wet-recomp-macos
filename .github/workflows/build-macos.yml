@@ -1,0 +1,98 @@
+# GitHub Actions: build the native Apple Silicon WET binary in the cloud.
+#
+# Trigger it manually: Actions tab -> "Build macOS (Apple Silicon)" -> Run workflow.
+# macOS runners bill at 10x minutes, so this only runs when you ask it to.
+#
+# One-time setup (on your Mac, see CI.md):
+#   1. Commit your encrypted game/default.xex.enc to this repo.
+#   2. Add its passphrase as the WET_XEX_PASSPHRASE Actions secret.
+# Afterwards, download the `wet-macos-arm64` artifact and drop the files
+# next to your own game/ folder to play.
+
+name: Build macOS (Apple Silicon)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15 # Apple Silicon (M1) runner, Xcode 16
+    timeout-minutes: 240
+    steps:
+      - name: Check out this repo
+        uses: actions/checkout@v4
+        with:
+          path: add-on
+
+      - name: Clone upstream wet-recomp
+        run: git clone --depth 1 https://github.com/Supermedo/wet-recomp.git wet-recomp
+
+      - name: Overlay add-on files
+        run: |
+          set -euo pipefail
+          cd wet-recomp
+          cp ../add-on/*.sh ../add-on/launch-native.command .
+          cp ../add-on/wet_manifest.toml .
+          cp ../add-on/patches/*.patch patches/
+          chmod +x *.sh launch-native.command
+
+      - name: Install build dependencies
+        run: |
+          set -euo pipefail
+          xcodebuild -version
+          brew install cmake ninja molten-vk vulkan-headers
+          # extract-xiso is not in Homebrew core; build it from source.
+          git clone --depth 1 https://github.com/XboxDev/extract-xiso.git /tmp/extract-xiso
+          cmake -S /tmp/extract-xiso -B /tmp/extract-xiso/build -DCMAKE_BUILD_TYPE=Release
+          cmake --build /tmp/extract-xiso/build -j3
+          sudo cmake --install /tmp/extract-xiso/build
+
+      - name: Decrypt default.xex
+        env:
+          WET_XEX_PASSPHRASE: ${{ secrets.WET_XEX_PASSPHRASE }}
+        run: |
+          set -euo pipefail
+          test -n "${WET_XEX_PASSPHRASE:-}" || { echo "::error::Missing WET_XEX_PASSPHRASE secret (see CI.md)."; exit 1; }
+          test -f add-on/game/default.xex.enc || { echo "::error::Missing add-on/game/default.xex.enc (see CI.md)."; exit 1; }
+          mkdir -p wet-recomp/game
+          openssl enc -d -aes-256-cbc -pbkdf2 \
+            -in add-on/game/default.xex.enc \
+            -out wet-recomp/game/default.xex \
+            -pass env:WET_XEX_PASSPHRASE
+          size=$(stat -f%z wet-recomp/game/default.xex)
+          echo "default.xex: $size bytes"
+          # WET's default.xex is about 22.4 MB; anything far smaller means
+          # the wrong file was encrypted or the passphrase is wrong.
+          test "$size" -gt 20000000 || { echo "::error::Decrypted file too small — wrong file or bad passphrase."; exit 1; }
+
+      - name: Apply patches and clone ReXGlue SDK
+        run: |
+          set -euo pipefail
+          cd wet-recomp
+          git apply patches/wet-recomp-macos.patch
+          git clone --branch v0.10.0 --depth 1 https://github.com/rexglue/rexglue-sdk.git thirdparty/rexglue-sdk
+          git -C thirdparty/rexglue-sdk apply ../../patches/rexglue-sdk-macos.patch
+
+      - name: Setup and codegen
+        run: |
+          set -euo pipefail
+          cd wet-recomp
+          ./setup-macos.sh
+          cp ../add-on/wet_manifest.toml .
+          cmake --build out/build/mac-arm64-release --target wet_codegen
+
+      - name: Build
+        run: |
+          set -euo pipefail
+          cd wet-recomp
+          ./build-macos.sh
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: wet-macos-arm64
+          path: |
+            wet-recomp/wet
+            wet-recomp/*.dylib
+            wet-recomp/MoltenVK_icd.json
+          if-no-files-found: error
