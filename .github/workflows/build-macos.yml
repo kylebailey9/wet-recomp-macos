@@ -18,6 +18,8 @@ jobs:
   build:
     runs-on: macos-15 # Apple Silicon (M1) runner, Xcode 16
     timeout-minutes: 240
+    env:
+      WET_PRESET: mac-arm64-release # explicit CMake preset; do not rely on uname detection
     steps:
       - name: Check out this repo
         uses: actions/checkout@v4
