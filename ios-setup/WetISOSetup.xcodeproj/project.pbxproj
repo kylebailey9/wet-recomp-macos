@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8D4F48752AF178D016B84EEA /* WetISOSetupApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C864505959DCFE4A81D436E /* WetISOSetupApp.swift */; };
+		CE2FED8E0CD573D1B68314B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D5B1C1FB84E176DC507E8F /* ContentView.swift */; };
+		647D0168A986D5C405A69579 /* SetupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D17598EA295009BC36AD82 /* SetupModel.swift */; };
+		18CA58A82EA1A5D875721939 /* XisoReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EBD302D397E22728802B2C /* XisoReader.swift */; };
+		FA467F72657B44C79469EC76 /* WetCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850236FEAC917A560501DC31 /* WetCrypto.swift */; };
+		E1F3297FFAAC57EA0227A9F9 /* Sodium in Frameworks */ = {isa = PBXBuildFile; productRef = D19A97FF432E1F69B4BD65B9 /* Sodium */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5587C674D8836CF993B78F84 /* WetISOSetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WetISOSetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C864505959DCFE4A81D436E /* WetISOSetupApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WetISOSetupApp.swift; sourceTree = "<group>"; };
+		F1D5B1C1FB84E176DC507E8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		26D17598EA295009BC36AD82 /* SetupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupModel.swift; sourceTree = "<group>"; };
+		40EBD302D397E22728802B2C /* XisoReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XisoReader.swift; sourceTree = "<group>"; };
+		850236FEAC917A560501DC31 /* WetCrypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WetCrypto.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		54CED72CF2A490EB2B75EA90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1F3297FFAAC57EA0227A9F9 /* Sodium in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A6813D078E2833C964ADB06 = {
+			isa = PBXGroup;
+			children = (
+				C126D4300FC718871703E819 /* WetISOSetup */,
+				840BF9156EC8386413E2B773 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C126D4300FC718871703E819 /* WetISOSetup */ = {
+			isa = PBXGroup;
+			children = (
+				8C864505959DCFE4A81D436E /* WetISOSetupApp.swift */,
+				F1D5B1C1FB84E176DC507E8F /* ContentView.swift */,
+				26D17598EA295009BC36AD82 /* SetupModel.swift */,
+				40EBD302D397E22728802B2C /* XisoReader.swift */,
+				850236FEAC917A560501DC31 /* WetCrypto.swift */,
+			);
+			path = WetISOSetup;
+			sourceTree = "<group>";
+		};
+		840BF9156EC8386413E2B773 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5587C674D8836CF993B78F84 /* WetISOSetup.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		56F9F0B283477F8523D82996 /* WetISOSetup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A3045E1AF802931B3A1A360 /* Build configuration list for PBXNativeTarget "WetISOSetup" */;
+			buildPhases = (
+				CDAD77A01BD387864DB1B89D /* Sources */,
+				54CED72CF2A490EB2B75EA90 /* Frameworks */,
+				082D9BB5F34EB0F3D7145996 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WetISOSetup;
+			packageProductDependencies = (
+				D19A97FF432E1F69B4BD65B9 /* Sodium */,
+			);
+			productName = WetISOSetup;
+			productReference = 5587C674D8836CF993B78F84 /* WetISOSetup.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EC2ABE0DD70511177ED24E0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					56F9F0B283477F8523D82996 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 445028C537D9D8DB7EAC3C18 /* Build configuration list for PBXProject "WetISOSetup" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A6813D078E2833C964ADB06;
+			packageReferences = (
+				CD390906FCE1CEDE08FD8D61 /* XCRemoteSwiftPackageReference "swift-sodium" */,
+			);
+			productRefGroup = 840BF9156EC8386413E2B773 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56F9F0B283477F8523D82996 /* WetISOSetup */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		082D9BB5F34EB0F3D7145996 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDAD77A01BD387864DB1B89D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D4F48752AF178D016B84EEA /* WetISOSetupApp.swift in Sources */,
+				CE2FED8E0CD573D1B68314B2 /* ContentView.swift in Sources */,
+				647D0168A986D5C405A69579 /* SetupModel.swift in Sources */,
+				18CA58A82EA1A5D875721939 /* XisoReader.swift in Sources */,
+				FA467F72657B44C79469EC76 /* WetCrypto.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		976A2EDAAEA5C5006A6711D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJCMESSAGESEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		35240AB14F25C23014A047BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJCMESSAGESEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		63304805D0D4F6C3F6EAC4D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.kylebailey94.WetISOSetup;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E1EF0100CB94AA96EB7A443 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.kylebailey94.WetISOSetup;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		445028C537D9D8DB7EAC3C18 /* Build configuration list for PBXProject "WetISOSetup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				976A2EDAAEA5C5006A6711D1 /* Debug */,
+				35240AB14F25C23014A047BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A3045E1AF802931B3A1A360 /* Build configuration list for PBXNativeTarget "WetISOSetup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63304805D0D4F6C3F6EAC4D6 /* Debug */,
+				8E1EF0100CB94AA96EB7A443 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD390906FCE1CEDE08FD8D61 /* XCRemoteSwiftPackageReference "swift-sodium" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jedisct1/swift-sodium";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D19A97FF432E1F69B4BD65B9 /* Sodium */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD390906FCE1CEDE08FD8D61 /* XCRemoteSwiftPackageReference "swift-sodium" */;
+			productName = Sodium;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+	};
+	rootObject = EC2ABE0DD70511177ED24E0E /* Project object */;
+}
