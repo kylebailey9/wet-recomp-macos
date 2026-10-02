@@ -1,0 +1,1 @@
+{"customizations":{"vscode":{"extensions":[]}},"image":"mcr.microsoft.com/devcontainers/universal:2","name":"WET Build Setup","postCreateCommand":"bash .devcontainer/setup.sh"}
