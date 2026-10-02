@@ -63,6 +63,7 @@ struct WetCrypto {
     private static func aesCBCEncrypt(_ data: Data, key: Data, iv: Data) throws -> Data {
         var out = Data(count: data.count + kCCBlockSizeAES128)
         var outLen = 0
+        let outCapacity = out.count
         let status: Int32 = out.withUnsafeMutableBytes { o in
             data.withUnsafeBytes { d in
                 key.withUnsafeBytes { k in
@@ -73,7 +74,7 @@ struct WetCrypto {
                                 k.baseAddress, key.count,
                                 v.baseAddress,
                                 d.baseAddress, data.count,
-                                o.baseAddress, out.count,
+                                o.baseAddress, outCapacity,
                                 &outLen)
                     }
                 }

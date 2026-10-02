@@ -34,7 +34,7 @@ struct XisoReader {
         for base in bases {
             let hOff = 0x10000 + base
             guard hOff + 28 <= fileSize else { continue }
-            try fh.seek(toFileOffset: hOff)
+            try fh.seek(toOffset: hOff)
             guard let h = try fh.read(upToCount: 28), h.count == 28, h.prefix(20) == magic else { continue }
 
             let rootSector: UInt32 = h.withUnsafeBytes { $0.load(fromByteOffset: 20, as: UInt32.self) }.littleEndian
@@ -44,9 +44,9 @@ struct XisoReader {
             for tbase in [base, UInt64(0)] {
                 let tOff = UInt64(rootSector) * 2048 + tbase
                 guard tOff + UInt64(rootSize) <= fileSize else { continue }
-                try fh.seek(toFileOffset: tOff)
+                try fh.seek(toOffset: tOff)
                 guard let table = try fh.read(upToCount: Int(rootSize)), table.count == rootSize else { continue }
-                if let found = walk(table: table, dataBase: base, fh: fh, fileSize: fileSize) {
+                if let found = try walk(table: table, dataBase: base, fh: fh, fileSize: fileSize) {
                     return found
                 }
             }
@@ -80,7 +80,7 @@ struct XisoReader {
             if name.lowercased() == "default.xex", attrs & 0x10 == 0, size > 0 {
                 let dOff = UInt64(sector) * 2048 + dataBase
                 guard dOff + UInt64(size) <= fileSize else { continue }
-                try fh.seek(toFileOffset: dOff)
+                try fh.seek(toOffset: dOff)
                 if let data = try fh.read(upToCount: Int(size)), data.count == size {
                     return data
                 }
